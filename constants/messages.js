@@ -7,6 +7,7 @@ export const startMessage = `👋 *Hello!*
 			🔹 \`/resume\` — Check out my resume  
 			🔹 \`/linkedin\` — Visit my LinkedIn profile  
 			🔹 \`/github\` — Explore my code on GitHub
+			🔹 \`/contact\` — Telegram Profile
 			🔹 \`/game\` — Guess the number🎲
 			 ❕ You can also type "hello," "bye," or "?" and the bot will respond to you.
 			💬 Choose a command and get the information you need! 🚀`;
@@ -21,3 +22,5 @@ export const githubMessage =
   '💻 *GitHub Profile* — [GitHub](https://github.com/DenysHV1)';
 export const gameMessage =
   '🎮 *Let’s play a game!* \nI’m thinking of a number from *1 to 10*\\. Can you guess it? 🤔';
+export const contactMessage =
+  '📨 *Telegram Profile* — [Contact me](https://t.me/Denys_HV)';

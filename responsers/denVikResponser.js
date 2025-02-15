@@ -1,5 +1,6 @@
 import { bot } from '../index.js';
 import {
+  contactMessage,
   githubMessage,
   linkedinMessage,
   portfolioMessage,
@@ -25,6 +26,9 @@ export const denVikResponser = async (message) => {
       case '/start':
         await bot.sendMessage(chatId, startMessage);
         return;
+        case '/contact':
+          await bot.sendMessage(chatId, contactMessage);
+          return;
       case '/portfolio':
         await bot.sendMessage(chatId, portfolioMessage, {
           parse_mode: 'MarkdownV2',

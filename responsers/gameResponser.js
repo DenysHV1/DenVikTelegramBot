@@ -18,8 +18,6 @@ export const gameResponser = (msg) => {
     if (data === '/restart') {
       return startGame(chatId);
     }
-    console.log(data);
-    console.log(chats[chatId]);
 
     if (Number(data) === Number(chats[chatId])) {
       bot.sendSticker(chatId, winnerSticker);
