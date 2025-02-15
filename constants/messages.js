@@ -23,4 +23,4 @@ export const githubMessage =
 export const gameMessage =
   '🎮 *Let’s play a game!* \nI’m thinking of a number from *1 to 10*\\. Can you guess it? 🤔';
 export const contactMessage =
-  '📨 *Telegram Profile* — [Contact me](https://t.me/Denys_HV)';
+  '📨Telegram Profile — https://t.me/Denys_HV';
