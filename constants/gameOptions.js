@@ -8,3 +8,12 @@ export const gameOptions = {
 		]
 	})
 };
+
+export const restartOptions = {
+	reply_markup: JSON.stringify({
+		inline_keyboard: [
+			[{text: 'Restart', callback_data: '/restart'}]
+		]
+	})
+};
+
