@@ -1,4 +1,4 @@
-import { bot } from '../index.js';
+import {bot} from '../bot.js'
 import {
   contactMessage,
   githubMessage,
