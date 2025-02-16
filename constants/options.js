@@ -17,3 +17,11 @@ export const restartOptions = {
 	})
 };
 
+export const weatherOptions = {
+	reply_markup: {
+	  keyboard: [[{ text: '📍Send location', request_location: true }]],
+	  resize_keyboard: true,
+	  one_time_keyboard: true,
+	},
+  }
+

@@ -1,7 +1,8 @@
-import { gameOptions, restartOptions } from '../constants/gameOptions.js';
+import { gameOptions, restartOptions } from '../constants/options.js';
 import { noSticker, winnerSticker } from '../constants/stickers.js';
 import { gameMessage } from '../constants/messages.js';
-import { bot } from '../bot.js';
+import { bot } from '../index.js';
+
 const chats = {};
 
 export const startGame = async (chatId) => {

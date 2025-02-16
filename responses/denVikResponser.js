@@ -1,4 +1,4 @@
-import {bot} from '../bot.js'
+
 import {
   contactMessage,
   githubMessage,
@@ -9,26 +9,24 @@ import {
 } from '../constants/messages.js';
 import {
   byeSticker,
-  errorSticker,
   helloSticker,
   okSticker,
 } from '../constants/stickers.js';
+import { bot } from '../index.js';
 import { startGame } from './gameResponser.js';
 
 export const denVikResponser = async (message) => {
   const text = message.text;
   const chatId = message.chat.id;
-  console.log(chatId);
   console.log(text);
-
   try {
     switch (text) {
       case '/start':
         await bot.sendMessage(chatId, startMessage);
         return;
-        case '/contact':
-          await bot.sendMessage(chatId, contactMessage);
-          return;
+      case '/contact':
+        await bot.sendMessage(chatId, contactMessage);
+        return;
       case '/portfolio':
         await bot.sendMessage(chatId, portfolioMessage, {
           parse_mode: 'MarkdownV2',
@@ -68,10 +66,23 @@ export const denVikResponser = async (message) => {
           return;
         }
 
-        await bot.sendSticker(chatId, errorSticker);
+        if(!text){
+          return;
+        }
+
         return;
     }
   } catch (error) {
-    return bot.sendSticker(chatId, errorSticker);
+    if (error.response?.statusCode === 429) {
+      const retryAfter = error.response.body.parameters.retry_after;
+      console.log(
+        `⚠️ Превышен лимит запросов! Ожидание ${retryAfter} секунд...`,
+      );
+      return await new Promise((resolve) =>
+        setTimeout(resolve, retryAfter * 1000),
+      );
+    } else {
+      console.error('❌ Something went wrong', error);
+    }
   }
 };
